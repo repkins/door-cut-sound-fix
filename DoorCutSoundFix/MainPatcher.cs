@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +12,7 @@ namespace DoorCutSoundFix
     {
         public static void Patch()
         {
-            var harmony = HarmonyInstance.Create("subnautica.mod.doorcutsoundfix");
-            harmony.PatchAll(Assembly.GetExecutingAssembly());
+            var harmony = Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), "subnautica.repkins.door-cut-sound-fix");
         }
     }
 }
